@@ -10,7 +10,7 @@ export const fetchProducts = () => {
         const userId = getState().auth.userId
         // any async code you want!
         try {
-            const response = await fetch('https://rn-shop-app-166b2.firebaseio.com/products.json'
+            const response = await fetch('https://<FIREBASE PROJECT NAME>.firebaseio.com/products.json'
             );
 
             if(!response.ok) {
@@ -61,7 +61,7 @@ export const createProduct = (title, description, imageUrl, price) => {
         const userId = getState().auth.userId
         console.log(getState())
         // any async code you want!
-       const response = await fetch(`https://rn-shop-app-166b2.firebaseio.com/products.json?auth=${token}`, {
+       const response = await fetch(`https://<FIREBASE PROJECT NAME>.firebaseio.com/products.json?auth=${token}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ export const updateProduct = (id, title, description, imageUrl) => {
     return async (dispatch, getState) => {
         const token = getState().auth.token
        const response = await fetch(
-            `https://rn-shop-app-166b2.firebaseio.com/products/${id}.json?auth=${token}`, 
+            `https://<FIREBASE PROJECT NAME>.firebaseio.com/products/${id}.json?auth=${token}`, 
         {
             method: 'PATCH',
             headers: {
