@@ -9,7 +9,7 @@ export const fetchOrders = () => {
         const userId = getState().auth.userId
             // any async code you want!
             try {
-                const response = await fetch(`https://rn-shop-app-166b2.firebaseio.com/orders/${userId}.json`
+                const response = await fetch(`https://<FIREBASE PROJECT NAME>.firebaseio.com/orders/${userId}.json`
                 );
     
                 if(!response.ok) {
@@ -41,7 +41,7 @@ export const addOrder = (cartItems, totalAmount) => {
         const token = getState().auth.token
         const userId = getState().auth.userId
         const date = new Date()
-        const response = await fetch(`https://rn-shop-app-166b2.firebaseio.com/orders/${userId}.json${token}`, 
+        const response = await fetch(`https://<FIREBASE PROJECT NAME>.firebaseio.com/orders/${userId}.json${token}`, 
         {
             method: 'POST',
             headers: {
